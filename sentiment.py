@@ -15,7 +15,8 @@ class Sentiment:
     def __init__(self):
         self.api = Api('UIUC') 
         
-        numdays = 365 * 10 
+        # numdays = 365 * 10 
+        numdays = 1
         base = datetime.datetime.today() - datetime.timedelta(days=1)
         # base = datetime.date(2018,4,17) - datetime.timedelta(days=1)
         date_list = [base - datetime.timedelta(days=x) 

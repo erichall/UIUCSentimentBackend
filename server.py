@@ -3,12 +3,14 @@ from sqlalchemy import create_engine
 from flask_restful import Resource, Api
 from flask import Flask, request
 import json
-from flask.ext.cors import CORS, cross_origin
+
+# from flask.ext.cors import CORS, cross_origin
+from flask_cors import CORS, cross_origin
 
 db_connect = create_engine('sqlite:///data.db')
 app = Flask(__name__)
-CORS(app, resources={r"/sentiment_range":\
-                     {"origins": "http://localhost:3000"}})
+# CORS(app, resources={r"/sentiment_range":\
+#                      {"origins": "http://localhost:3000"}})
 api = Api(app)
 
 
@@ -51,4 +53,4 @@ def sentiment_for_range():
 # api.add_resource(SentimentServer, '/sentiment/<date>')
 
 if __name__ == '__main__':
-    app.run(port='5002')
+    app.run(host='0.0.0.0',port=5002)
