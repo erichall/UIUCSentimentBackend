@@ -53,4 +53,4 @@ def sentiment_for_range():
 # api.add_resource(SentimentServer, '/sentiment/<date>')
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0',port=5002)
+    app.run(host='0.0.0.0',port=80)
