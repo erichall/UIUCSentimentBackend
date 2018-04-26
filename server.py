@@ -13,7 +13,7 @@ app = Flask(__name__)
 #                      {"origins": "http://localhost:3000"}})
 
 CORS(app, resources={r"/sentiment_range":\
-                     {"origins": "https://erichall.github.io/UIUCSentimentFrontend/"}})
+                     {"origins": "http://erichall.github.io/UIUCSentimentFrontend/"}})
 api = Api(app)
 
 
