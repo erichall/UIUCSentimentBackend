@@ -12,8 +12,7 @@ app = Flask(__name__)
 # CORS(app, resources={r"/sentiment_range":\
 #                      {"origins": "http://localhost:3000"}})
 
-CORS(app, resources={r"/sentiment_range":\
-                     {"origins": "http://frontend.sentiment.01dd0694.svc.dockerapp.io:5000"}})
+CORS(app)
 
 api = Api(app)
 
