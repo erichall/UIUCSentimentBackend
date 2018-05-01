@@ -1,21 +1,27 @@
-# version: "3"
-# services:
-#   web:
-#     # replace username/repo:tag with your name and image details
-#     # image: username/repo:tag
-#     image: erichall/uiuc-sentiment-backend:server
-#     network_mode: "host"
-#     deploy:
-#       replicas: 10
-#       resources:
-#         limits:
-#           cpus: "0.1"
-#           memory: 50M
-#       restart_policy:
-#         condition: on-failure
-#     ports:
-#       - "3001:5002"
-#     networks:
-#       - webnet
-# networks:
-#   webnet:
+version: "3"
+services:
+  backend:
+    image: erichall/uiuc-sentiment-backend:latest
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: "0.1"
+          memory: 50M
+      restart_policy:
+        condition: on-failure
+    ports:
+      - "80:80"
+
+  frontend:
+    image: erichall/uiucfrontend:latest
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: "0.1"
+          memory: 50M
+      restart_policy:
+        condition: on-failure
+    ports:
+      - "5000:5000"

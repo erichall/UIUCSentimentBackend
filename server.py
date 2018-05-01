@@ -9,10 +9,10 @@ from flask_cors import CORS, cross_origin
 
 db_connect = create_engine('sqlite:///data.db')
 app = Flask(__name__)
-# CORS(app, resources={r"/sentiment_range":\
-#                      {"origins": "http://localhost:3000"}})
+CORS(app, resources={r"/sentiment_range":\
+                     {"origins": "http://localhost:5000"}})
 
-CORS(app)
+# CORS(app)
 
 api = Api(app)
 
