@@ -1,6 +1,7 @@
 ## ABOUT
 
 This project consists of two microservices, one for the backend and one for the frontend. In order to run the program on your local computer you need to clone both projects from github and start them in separate terminals.
+![frontend](https://github.com/erichall/UIUCSentimentBackend/blob/master/example_screen.png)
 
 ## USAGE
 
