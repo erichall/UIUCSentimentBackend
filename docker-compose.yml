@@ -12,6 +12,8 @@ services:
         condition: on-failure
     ports:
       - "80:80"
+    networks:
+      - sentiment_webnet
 
   frontend:
     image: erichall/uiucfrontend:latest
@@ -25,3 +27,8 @@ services:
         condition: on-failure
     ports:
       - "5000:5000"
+    networks:
+      - sentiment_webnet
+
+networks:
+  sentiment_webnet:

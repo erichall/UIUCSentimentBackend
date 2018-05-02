@@ -3,18 +3,17 @@ from sqlalchemy import create_engine
 from flask_restful import Resource, Api
 from flask import Flask, request
 import json
+import argparse
 
-# from flask.ext.cors import CORS, cross_origin
 from flask_cors import CORS, cross_origin
 
 db_connect = create_engine('sqlite:///data.db')
 app = Flask(__name__)
-CORS(app, resources={r"/sentiment_range":\
-                     {"origins": "http://localhost:5000"}})
-
-# CORS(app)
 
 api = Api(app)
+
+CORS(app, resources={r"/sentiment_range":\
+                     {"origins": "http://localhost:3000"}})
 
 
 @app.route('/sentiment/<date>')
@@ -50,10 +49,22 @@ def sentiment_for_range():
         data[row[0]] = obj
     print('found ' + str(len(d)) + ' sentiments')
     return json.dumps(data)
-
-
-
-# api.add_resource(SentimentServer, '/sentiment/<date>')
+def __init__(self):
+    print('duuude')
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0',port=80)
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        '--host', type=str,
+        default='localhost',
+        help='what url to run the server on, default localhost')
+    parser.add_argument(
+        '--port', type=str,
+        default='3001',
+        help='what port to run the server on, default 3001')
+
+    args = parser.parse_args()
+    # print(vars(args)['host'],'dude')
+    host, port = vars(args)['host'], vars(args)['port']
+
+    app.run(port=port, host=host)
