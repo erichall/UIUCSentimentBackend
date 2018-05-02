@@ -76,6 +76,12 @@ navigate to ```http://localhost:3000/``` and your browser and you should see a g
 The most common problem I encountered is browser caching, so either open the frontend page in incognito mode or clear you browser history.
 
 
+## CONTRIBUTORS
+Eric Hallström hallstrom.eric@gmail.com
+
+
+
+
 
 
 
