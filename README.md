@@ -3,7 +3,7 @@
 This project consists of two microservices, one for the backend built in python and one for the frontend built in React.
 ![frontend](https://github.com/erichall/UIUCSentimentBackend/blob/master/example_screen.png)
 
-## OVERVIEW [backend](https://github.com/erichall/UIUCSentimentBackend)
+## OVERVIEW [BACKEND](https://github.com/erichall/UIUCSentimentBackend)
 ### redditAPI.py
 A wrapper around [Praw](https://praw.readthedocs.io/en/latest/) to fetch comments and posts from [UIUC subreddit](reddit.com/r/UIUC/). This wrapper fetches posts and comments between configurable dates and calculates the sentiment value and stores the data in a [sqllite3](https://docs.python.org/2/library/sqlite3.html) database called data.db.
 The data inside data.db consists of sentiment and postscounts between 2010 up to 2018. To fetch more data one must create a .env file following the format:  
