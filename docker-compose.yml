@@ -3,7 +3,7 @@ services:
   backend:
     image: erichall/uiuc-sentiment-backend:latest
     deploy:
-      replicas: 2
+      replicas: 1
       resources:
         limits:
           cpus: "0.1"
@@ -16,7 +16,7 @@ services:
   frontend:
     image: erichall/uiucfrontend:latest
     deploy:
-      replicas: 2
+      replicas: 1
       resources:
         limits:
           cpus: "0.1"

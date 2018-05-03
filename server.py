@@ -57,11 +57,11 @@ if __name__ == '__main__':
     parser.add_argument(
         '--host', type=str,
         default='0.0.0.0',
-        help='what url to run the server on, default localhost')
+        help='what url to run the server on, default 0.0.0.0')
     parser.add_argument(
         '--port', type=str,
-        default='3001',
-        help='what port to run the server on, default 3001')
+        default='80',
+        help='what port to run the server on, default 80')
 
     args = parser.parse_args()
     # print(vars(args)['host'],'dude')
