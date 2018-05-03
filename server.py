@@ -60,8 +60,8 @@ if __name__ == '__main__':
         help='what url to run the server on, default 0.0.0.0')
     parser.add_argument(
         '--port', type=int,
-        default=3001,
-        help='what port to run the server on, default 3001')
+        default=80,
+        help='what port to run the server on, default 80')
     args = parser.parse_args()
     host, port = vars(args)['host'], int(vars(args)['port'])
 
