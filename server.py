@@ -62,7 +62,6 @@ if __name__ == '__main__':
         '--port', type=int,
         default=3001,
         help='what port to run the server on, default 3001')
-
     args = parser.parse_args()
     host, port = vars(args)['host'], vars(args)['port']
 
