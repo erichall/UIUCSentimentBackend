@@ -59,7 +59,7 @@ if __name__ == '__main__':
         default='0.0.0.0',
         help='what url to run the server on, default 0.0.0.0')
     parser.add_argument(
-        '--port', type=integer,
+        '--port', type=int,
         default=3001,
         help='what port to run the server on, default 3001')
 
