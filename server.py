@@ -12,8 +12,8 @@ app = Flask(__name__)
 
 api = Api(app)
 
-CORS(app, resources={r"/sentiment_range":\
-                     {"origins": "http://frontend.sentiment.01dd0694.svc.dockerapp.io:5000"}})
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 
 @app.route('/sentiment/<date>')
