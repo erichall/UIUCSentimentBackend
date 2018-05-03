@@ -30,6 +30,10 @@ def sentiment_for_date(date):
 
     return json.dumps(data)
 
+@app.route('/')
+def hello():
+    return 'Hello World! I\'m up and running!'
+
 @app.route('/sentiment_range')
 def sentiment_for_range():
     start_date = request.args.get('start_date', None)
@@ -60,8 +64,8 @@ if __name__ == '__main__':
         help='what url to run the server on, default 0.0.0.0')
     parser.add_argument(
         '--port', type=int,
-        default=3002,
-        help='what port to run the server on, default 3002')
+        default=8080,
+        help='what port to run the server on, default 8080')
     args = parser.parse_args()
     host, port = vars(args)['host'], int(vars(args)['port'])
 

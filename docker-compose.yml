@@ -11,7 +11,7 @@ services:
       restart_policy:
         condition: on-failure
     ports:
-      - "3001:3002"
+      - "8080:8080"
 
   frontend:
     image: erichall/uiucfrontend:latest
