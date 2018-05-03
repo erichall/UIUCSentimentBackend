@@ -64,7 +64,6 @@ if __name__ == '__main__':
         help='what port to run the server on, default 80')
 
     args = parser.parse_args()
-    # print(vars(args)['host'],'dude')
     host, port = vars(args)['host'], vars(args)['port']
 
     app.run(port=port, host=host)
