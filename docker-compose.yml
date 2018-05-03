@@ -11,9 +11,7 @@ services:
       restart_policy:
         condition: on-failure
     ports:
-      - "80:80"
-    networks:
-      - sentiment_webnet
+      - "80:8000"
 
   frontend:
     image: erichall/uiucfrontend:latest
@@ -27,8 +25,3 @@ services:
         condition: on-failure
     ports:
       - "5000:5000"
-    networks:
-      - sentiment_webnet
-
-networks:
-  sentiment_webnet:

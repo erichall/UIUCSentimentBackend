@@ -56,7 +56,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument(
         '--host', type=str,
-        default='localhost',
+        default='0.0.0.0',
         help='what url to run the server on, default localhost')
     parser.add_argument(
         '--port', type=str,
