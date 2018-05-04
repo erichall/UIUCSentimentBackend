@@ -12,8 +12,9 @@ app = Flask(__name__)
 
 api = Api(app)
 
+
 CORS(app, resources={r"/sentiment_range":\
-                     {"origins": "http://localhost:8081"}})
+                     {"origins": "https://localhost:8081"}})
 
 app.config['CORS_HEADERS'] = 'Content-Type'
 
@@ -71,4 +72,4 @@ if __name__ == '__main__':
     args = parser.parse_args()
     host, port = vars(args)['host'], int(vars(args)['port'])
 
-    app.run(port=port, host=host)
+    app.run(port=port, host=host, ssl_context='adhoc')
