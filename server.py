@@ -14,7 +14,7 @@ api = Api(app)
 
 
 CORS(app, resources={r"/sentiment_range":\
-                     {"origins": "https://localhost:8081"}})
+                     {"origins": "http://localhost:8081"}})
 
 app.config['CORS_HEADERS'] = 'Content-Type'
 
