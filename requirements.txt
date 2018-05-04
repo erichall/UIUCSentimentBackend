@@ -5,3 +5,4 @@ nltk==3.2.5
 Flask==0.12.2
 flask_cors==3.0.3
 praw==5.4.0
+pyopenssl==17.5.0
