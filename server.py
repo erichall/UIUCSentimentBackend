@@ -12,9 +12,8 @@ app = Flask(__name__)
 
 api = Api(app)
 
-
 CORS(app, resources={r"/sentiment_range":\
-                     {"origins": "http://localhost:8081"}})
+                     {"origins": "http://localhost:3000"}})
 
 app.config['CORS_HEADERS'] = 'Content-Type'
 
@@ -67,8 +66,8 @@ if __name__ == '__main__':
         help='what url to run the server on, default 0.0.0.0')
     parser.add_argument(
         '--port', type=int,
-        default=8080,
-        help='what port to run the server on, default 8080')
+        default=3001,
+        help='what port to run the server on, default 3001')
     args = parser.parse_args()
     host, port = vars(args)['host'], int(vars(args)['port'])
 
