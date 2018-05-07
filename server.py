@@ -63,7 +63,7 @@ if __name__ == '__main__':
     parser.add_argument(
         '--host', type=str,
         default='0.0.0.0',
-        help='what url to run the server on, default 0.0.0.0')
+        help='what host to run the server on, default 0.0.0.0')
     parser.add_argument(
         '--port', type=int,
         default=3001,
@@ -71,4 +71,4 @@ if __name__ == '__main__':
     args = parser.parse_args()
     host, port = vars(args)['host'], int(vars(args)['port'])
 
-    app.run(port=port, host=host, ssl_context='adhoc')
+    app.run(port=port, host=host)
